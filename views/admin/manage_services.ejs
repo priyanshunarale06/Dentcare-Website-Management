@@ -1,0 +1,75 @@
+<%- include('navbar.ejs') %>
+<form action="/admin/save_service" method="post" enctype="multipart/form-data">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>MANAGE SERVICES</h3>
+            </div>
+            <div class="col-md-4">
+                Service Name
+                <input type="text" name="service_name" class="form-control">
+            </div>
+            <div class="col-md-4">
+                Service Image
+                <input type="file" name="service_image" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                Service Price
+                <input type="number" name="service_price" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                Key Point 1
+                <input type="text" name="key_point1" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                Key Point 2
+                <input type="text" name="key_point2" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                Key Point 3
+                <input type="text" name="key_point3" class="form-control" required>
+            </div>
+            <div class="col-md-4"><br>
+               <button class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-sm">
+                <tr>
+                    <th></th>
+                    <th>SN</th>
+                    <th>Heading</th>
+                    <th>Image</th>
+                    <th>Key points1</th>
+                    <th>Key points2</th>
+                    <th>Key points3</th>
+                </tr>
+                <%for(var i=0;i<services.length;i++) { %>
+                <tr>
+                    <td width="1%" style="white-space: nowrap;">
+                        <a href="/admin/edit_services/<%=services[i].service_id%>">
+                            <button class="btn btn-primary">EDIT</button>
+                        </a>
+                        <a href="/admin/delete_services/<%=services[i].service_id%>">
+                            <button class="btn btn-danger">DELETE</button>
+                        </a>
+                    </td>
+                    <td><%=i+1%></td>
+                    <td><%=services[i].service_name%></td>
+                    <td width="1%" style="white-space: nowrap;">
+                        <img src="/img/<%=services[i].service_image%>" height="100px" width="150px">
+                    </td>
+                    <td><%=services[i].key_point1%></td>
+                    <td><%=services[i].key_point2%></td>
+                    <td><%=services[i].key_point3%></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs') %>

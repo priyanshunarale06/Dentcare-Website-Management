@@ -1,0 +1,26 @@
+<%- include('navbar.ejs')%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <th>sn</th>
+                    <th>User name</th>
+                    <th>User email</th>
+                    <th>User number</th>
+                    <th>User message</th>
+                </tr>
+                <% for (var i=0;i<save_contact.length;i++) { %>
+                <tr>
+                    <td><%=i+1%></td>
+                    <td><%=save_contact[i].user_name%></td>
+                    <td><%=save_contact[i].user_email%></td>
+                    <td><%=save_contact[i].user_number%></td>
+                    <td><%=save_contact[i].user_message%></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs')%>

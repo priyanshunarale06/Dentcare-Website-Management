@@ -1,0 +1,50 @@
+<%- include('navbar.ejs')%>
+    <form action="/admin/save_basic_information" method="post">
+        <div class="container-fluid bg-white p-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Basic information form</h3>
+                </div>
+                <div class="col-md-3">
+                    Mobile No
+                    <input type="number" name="mobile_no" value="<%=basic_info.mobile_no%>" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    Email Id
+                    <input type="text" name="email_id" value="<%=basic_info.email_id%>" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    Address
+                    <input type="text" name="adress" value="<%=basic_info.adress%>" class="form-control">
+                </div>
+                <div class="col mt-4">
+                    Twitter Link
+                    <input type="text" name="twitter_link" value="<%=basic_info.twitter_link%>" class="form-control">
+                </div>
+                <div class="col mt-4">
+                    Facebook Link
+                    <input type="text" name="facebook_link" value="<%=basic_info.facebook_link%>" class="form-control">
+                </div>
+                <div class="col mt-4">
+                    LinkedIn Link
+                    <input type="text" name="linkedin_link" value="<%=basic_info.linkedin_link%>" class="form-control">
+                </div>
+                <div class="col mt-4">
+                    Instagram Link
+                    <input type="text" name="instagram_link" value="<%=basic_info.instagram_link%>" class="form-control">
+                </div>
+                <div class="col mt-4">
+                    Google Map
+                    <input type="text" name="google_map_link" value="<%=basic_info.google_map_link%>" class="form-control">
+                </div>
+                <div class="col-12 mt-4">
+                    Heading
+                    <input type="text" name="heading" value="<%=basic_info.heading%>" class="form-control">
+                </div>
+                <div class="col-12 mt-4 text-center">
+                    <button class="btn btn-primary">SAVE INFORMATION</button>
+                </div>
+            </div>
+        </div>
+    </form>
+<%- include('footer.ejs') %>

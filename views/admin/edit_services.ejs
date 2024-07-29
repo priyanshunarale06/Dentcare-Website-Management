@@ -1,0 +1,42 @@
+<%- include('navbar.ejs') %>
+<form action="/admin/update_service" method="post" enctype="multipart/form-data">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>MANAGE SERVICES</h3>
+            </div>
+            <div class="col-md-4">
+                Service Name
+                <input type="hidden" value="<%=services[0].service_id%>" name="service_id" class="form-control">
+                <input type="text" value="<%=services[0].service_name%>" name="service_name" class="form-control">
+            </div>
+            <div class="col-md-4">
+                Service Image
+                <input type="file" name="service_image" class="form-control" required>
+            </div>
+            <div class="col-md-2">
+                <img src="/img/<%=services[0].service_image%>" width="100px">
+            </div>
+            <div class="col-md-2">
+                Service Price
+                <input type="number" value="<%=services[0].service_price%>" name="service_price" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                Key Point 1
+                <input type="text" value="<%=services[0].key_point1%>" name="key_point1" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                Key Point 2
+                <input type="text" value="<%=services[0].key_point2%>" name="key_point2" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                Key Point 3
+                <input type="text" value="<%=services[0].key_point3%>" name="key_point3" class="form-control" required>
+            </div>
+            <div class="col-md-12 text-center"><br>
+               <button class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include('footer.ejs') %>

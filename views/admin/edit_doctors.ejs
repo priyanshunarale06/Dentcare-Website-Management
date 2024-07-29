@@ -1,0 +1,63 @@
+<%- include('navbar.ejs') %>
+<form action="/admin/update_doctors" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Edit Doctor info</h2>
+            </div>
+            <div class="col-md-3">
+                Doctor Name
+                <input type="hidden" name="doctor_id"  value="<%=doctors[0].doctor_id%>">
+                <input type="text" class="form-control" value="<%=doctors[0].doctor_name%>" name="doctor_name">
+            </div>
+            <div class="col-md-3">
+                Doctor Mobile
+                <input type="number" class="form-control" value="<%=doctors[0].doctor_mobile%>" name="doctor_mobile">
+            </div>
+            <div class="col-md-3">
+                Doctor Email
+                <input type="text" class="form-control" value="<%=doctors[0].doctor_email%>" name="doctor_email">
+            </div>
+            <div class="col-md-3">
+                Specialist
+                <input type="text" class="form-control" value="<%=doctors[0].specialist%>" name="specialist">
+            </div>
+            <div class="col-md-3" reqi>
+                Service of doctor
+                <select class="form-control" name="doctor_service_id" required>
+                    <option><%=service_list[0].service_name%></option>
+                    <% for (var i=0;i<service_list.length;i++) { %>
+                        <option value="<%=service_list[i].service_id%>"><%=service_list[i].service_name%></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="col-md-3">
+                Doctor Image
+                <input type="file" name="doctor_image" class="form-control" required> 
+            </div>
+            <div class="col-md-3">
+                <img src="/img/<%=doctors[0].doctor_image%>" width="100px">
+            </div>
+            <div class="col-md-3">
+                Twitter Link
+                <input type="link" class="form-control" value="<%=doctors[0].twitter_link%>" name="twitter_link">
+            </div>
+            <div class="col-md-3">
+                 Link
+                 <input type="link" class="form-control" value="<%=doctors[0].facebook_link%>" name="facebook_link">
+                </div>
+            <div class="col-md-3">
+                LinkedIn Link
+                <input type="link" class="form-control" value="<%=doctors[0].linkedin_link%>" name="linkedin_link">
+            </div>
+            <div class="col-md-3">
+                Instagram Link
+                <input type="link" class="form-control" value="<%=doctors[0].instagram_link%>" name="instagram_link">
+            </div>
+            <div class="col-md-12 text-center mt-3">
+                <button class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include('footer.ejs') %>

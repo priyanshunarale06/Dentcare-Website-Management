@@ -1,0 +1,49 @@
+<%- include('navbar.ejs') %>
+<form action="/admin/save_about_info" method="post" enctype="multipart/form-data">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>About us info</h2>
+            </div>
+            <div class="col-md-3">
+                Heading
+                <input type="text" name="heading" class="form-control" value="<%=about_det['heading']%>">
+            </div>
+            <div class="col-md-3">
+                Sub Heading
+                <input type="text" name="sub_heading" class="form-control" value="<%=about_det['sub_heading']%>">
+            </div>
+            <div class="col-md-3">
+                Image
+                <input type="file" name="about_image" class="form-control" value="<%=about_det['about_image']%>">
+            </div>
+            <div class="col-md-3">
+              <img src="/img/<%=about_det['about_image']%>" height="100px">
+            </div>
+            <div class="col-md-12 mb-5">
+                Details
+                <textarea  name="details" class="form-control"><%=about_det['details']%></textarea>
+            </div>
+            <div class="col-md-3">
+                key point 1
+                <input type="text" name="key_points1" class="form-control" value="<%=about_det['key_points1']%>">
+            </div>
+            <div class="col-md-3">
+                key point 2
+                <input type="text" name="key_points2" class="form-control" value="<%=about_det['key_points2']%>" >
+            </div>
+            <div class="col-md-3">
+                key point 3
+                <input type="text" name="key_points3" class="form-control" value="<%=about_det['key_points3']%>">
+            </div>
+            <div class="col-md-3">
+                key point 4
+                <input type="text" name="key_points4" class="form-control" value="<%=about_det['key_points4']%>">
+            </div>
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary mt-3">save</button>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include('footer.ejs') %>
